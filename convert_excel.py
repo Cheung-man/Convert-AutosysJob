@@ -119,13 +119,13 @@ def read_dq_jobfield(jobfield):
 
 def convert_e2j():
     max_row = xlsx.ws.max_row
-    max_col = xlsx.ws.max_column
+    cnt_job = max_row - 1
 
     row_header = xlsx.ws[1]
     row_range = xlsx.ws[2:max_row]
 
     with open(arg_jilfile, "w") as jilfile:
-        for rows in track(row_range, description="[white]  - Convert Job Info :", total=max_row):
+        for rows in track(row_range, description="[white]  - Convert Job Info :", total=cnt_job):
             idx_column = 0
             jilfile.write("\n\n/* " + "-" * 17 + " " +
                           str(rows[0].value + " " + "-" * 17 + " */\n\n"))
@@ -141,12 +141,6 @@ def convert_e2j():
                     if (header == "insert_job" or header == "updatE_job"):
                         jilfile.write(header + ": " + celldata + "   ")
                     else:
-                        # if header == "permission":  # "permission" 필드 권한 처리
-                        #     if celldata == "gx,ge,wx,we,mx,me":
-                        #         jilfile.write(header + ": \n")
-                        #     else:
-                        #         jilfile.write(header + ": " + celldata + "\n")
-                        # elif header == "notification_emailaddress":
                         if header == "notification_emailaddress":
                             splited_celldata = celldata.split(",")
                             for sp_cell in splited_celldata:
@@ -160,7 +154,7 @@ def convert_e2j():
 
                 idx_column += 1
 
-    msg.printmsg("Convert Job : " + str(max_row), "->", 1)
+    msg.printmsg("Convert Job : " + str(cnt_job), "->", 1)
 
 
 def main():

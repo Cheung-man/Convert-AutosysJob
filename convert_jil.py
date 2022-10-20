@@ -137,15 +137,14 @@ def convert_j2e():
     ws.append(used_jobfield)
 
     cnt_job = count_job(arg_jilfile)
-    list_of_alljob = []
+    list_alljob = []
     job = {}    # 개별 Job 정보
     with open(arg_jilfile, "r") as jil:
         for line_jil in track(jil, description="[white]  -> Convert Job Info :", total=cnt_job):
             if "insert_job:" in line_jil:
-                list_of_alljob.append(job)
+                list_alljob.append(job)
                 line_jil = line_jil.strip()
-                jobName = re.findall(
-                    r"insert_job:(.*?)job_type:", line_jil)[0]
+                jobName = re.findall(r"insert_job:(.*?)job_type:", line_jil)[0]
                 jobType = line_jil.split("job_type:")[1]
                 job = {}
                 job["insert_job"] = str(jobName).strip()
@@ -182,10 +181,10 @@ def convert_j2e():
                         job[str(spli[0]).strip()] = str(
                             spli[1]).strip().replace("\"", "")
 
-        list_of_alljob.append(job)
+        list_alljob.append(job)
 
-    list_of_alljob.pop(0)
-    for ar in list_of_alljob:
+    list_alljob.pop(0)
+    for ar in list_alljob:
         values = []
         for k in used_jobfield:
             if k in ar:
