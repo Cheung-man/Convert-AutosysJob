@@ -1,7 +1,7 @@
 # Convert Autosys JIL <-> Excel
 
-Convert Autosys' JIL file to Excel file OR Excel to JIL
-I am not a developer.
+Convert Autosys' JIL file to Excel file OR Excel to JIL<br>
+I am not a developer.<br>
 It's very sloppy because I made it myself
 
 ## Requirement
@@ -9,6 +9,16 @@ It's very sloppy because I made it myself
 - python
 - Sloppy (It's very sloppy because I made it myself)
   -> Several additional packages are used inside
+
+## Description
+
+- convert_jil.py : Convert JIL -> Excel
+- convert_excel.py : Convert Excel -> JIL
+- jobfield.json : Set Autosys Field to use
+- ALLJOB.jil : Sample JIL
+- ALLJOB.xlsx : Converted excel file from ALLJOB.jil
+- C_ALLJOB.xlsx : Sample Excel file
+- C_ALLJOB.jil : Converted jil file from C_ALLJOB.xlsx
 
 ## Run the Script
 
@@ -18,3 +28,7 @@ It's very sloppy because I made it myself
 3. copy ALLJOB.xlsx C_ALLJOB.xlsx
 4. Excute the Following
    -> python convert_excel.py -E C_ALLJOB.xlsx (Converted C_ALLJOB.jil file is generated when excute)
+
+## Reference
+
+- https://github.com/harshit740/JIL-To-Excel
