@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+    <box>
+        <insert_job desc="Box 명" required="Y">
+            <length>64</length>
+            <char_rule>alphanumeric, comma, underline</char_rule>
+            <tran_rule>영문자, 쉼표</tran_rule>
+        </insert_job>
+        <description desc="Description">
+            <length>500</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </description>
+        <condition desc="선행 조건">
+            <length>4096</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </condition>
+        <owner desc="수행 소유자">
+            <length>145</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </owner>
+        <box_name desc="해당 Box의 상위 Box">
+            <length>64</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </box_name>
+        <group desc="소속 Group">
+            <length>64</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </group>
+        <application desc="소속 Application">
+            <length>64</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </application>
+        <box_success desc="해당 Box의 성공 조건">
+            <length>4096</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </box_success>
+        <box_failure desc="해당 Box의 실패 조건">
+            <length>4096</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </box_failure>
+        <box_terminator desc="Job이 Failure시에 Box를 Terminate 시킴">
+            <length>1</length>
+            <char_rule>bool</char_rule>
+            <tran_rule>선택/미선택</tran_rule>
+        </box_terminator>
+        <job_terminator desc="Terminate on failure of contaning box">
+            <length>1</length>
+            <char_rule>bool</char_rule>
+            <tran_rule>선택/미선택</tran_rule>
+        </job_terminator>
+        <term_run_time>
+            <length>4096</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </term_run_time>
+        <auto_delete>
+            <length>4096</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </auto_delete>
+        <schedule>
+            <n_retrys>
+                <length>200</length>
+                <char_rule>numeric</char_rule>
+                <tran_rule></tran_rule>
+            </n_retrys>
+            <auto_hold>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </auto_hold>
+            <avg_runtime>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </avg_runtime>
+            <priority>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </priority>
+            <date_conditions>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </date_conditions>
+            <timezone>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </timezone>
+            <run_window>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </run_window>
+            <run_calendar>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </run_calendar>
+            <days_of_week>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </days_of_week>
+            <exclude_calendar>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </exclude_calendar>
+            <start_times>
+                <length>255</length>
+                <char_rule>time</char_rule>
+                <tran_rule>시간</tran_rule>
+            </start_times>
+            <start_mins>
+                <length>255</length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </start_mins>
+            <must_start_times>
+                <length>255</length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </must_start_times>
+            <must_complete_times>
+                <length>255</length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </must_complete_times>
+        </schedule>
+        <permission>
+            <gx desc="Group Execute">
+                <length>1</length>
+                <char_rule>YN</char_rule>
+                <tran_rule>Y(Yes) / N(No)</tran_rule>
+            </gx>
+            <ge desc="Group Edit">
+                <length>1</length>
+                <char_rule>YN</char_rule>
+                <tran_rule>Y(Yes) / N(No)</tran_rule>
+            </ge>
+            <wx desc="World Execute">
+                <length>1</length>
+                <char_rule>YN</char_rule>
+                <tran_rule>Y(Yes) / N(No)</tran_rule>
+            </wx>
+            <we desc="World Edit">
+                <length>1</length>
+                <char_rule>YN</char_rule>
+                <tran_rule>Y(Yes) / N(No)</tran_rule>
+            </we>
+            <mx desc="Machine Execute">
+                <length>1</length>
+                <char_rule>YN</char_rule>
+                <tran_rule>Y(Yes) / N(No)</tran_rule>
+            </mx>
+            <me desc="Machine Edit">
+                <length>1</length>
+                <char_rule>YN</char_rule>
+                <tran_rule>Y(Yes) / N(No)</tran_rule>
+            </me>
+        </permission>
+    </box>
+    <job>
+        <insert_job desc="Job 명" required="Y">
+            <length>64</length>
+            <char_rule>alphanumeric, comma</char_rule>
+            <tran_rule>영문자, 쉼표</tran_rule>
+        </insert_job>
+        <description desc="Description">
+            <length>500</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </description>
+        <machine desc="Agent 명" required="y">
+            <length>80</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </machine>
+        <condition desc="선행 조건">
+            <length>4096</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </condition>
+        <resources desc="Resource">
+            <length>200</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </resources>
+        <owner desc="수행 소유자">
+            <length>145</length>
+            <char_rule>alphanumeric, @</char_rule>
+            <tran_rule></tran_rule>
+        </owner>
+        <box_name desc="해당 Job의 상위 Box">
+            <length>64</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </box_name>
+        <group desc="소속 Group">
+            <length>64</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </group>
+        <application desc="소속 Application">
+            <length>64</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </application>
+        <command desc="실행 명령어">
+            <length>512</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </command>
+        <shell desc="쉘 종류">
+            <length>100</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </shell>
+        <interactive desc="interactive">
+            <length>1</length>
+            <char_rule>YN</char_rule>
+            <tran_rule></tran_rule>
+        </interactive>
+        <heartbeat_interval desc="heartbeat interval">
+            <length></length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </heartbeat_interval>
+        <std_in_file desc="Standard Input File">
+            <length></length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </std_in_file>
+        <blob_input desc="Blob input">
+            <length></length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </blob_input>
+        <std_out_file desc="Standard Output File">
+            <length>255</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </std_out_file>
+        <std_err_file desc="Standard Error File">
+            <length>255</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </std_err_file>
+        <elevated desc="Run in elevated mode">
+            <length>255</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </elevated>
+        <job_class desc="Agent Job class">
+            <length>255</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </job_class>
+        <envvars>
+            <length>255</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </envvars>
+        <profile>
+            <length>255</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </profile>
+        <ulimit>
+            <length>255</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </ulimit>
+        <chk_files>
+            <length>255</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </chk_files>
+        <box_terminator desc="Job이 Failure시에 Box를 Terminate 시킴">
+            <length>1</length>
+            <char_rule>bool</char_rule>
+            <tran_rule>선택/미선택</tran_rule>
+        </box_terminator>
+        <job_terminator desc="Terminate on failure of contaning box">
+            <length>1</length>
+            <char_rule>bool</char_rule>
+            <tran_rule>선택/미선택</tran_rule>
+        </job_terminator>
+        <term_run_time>
+            <length>4096</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </term_run_time>
+        <auto_delete>
+            <length>4096</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </auto_delete>
+        <max_exit_success>
+            <length>4096</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </max_exit_success>
+        <success_codes>
+            <length>4096</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </success_codes>
+        <fail_codes>
+            <length>4096</length>
+            <char_rule></char_rule>
+            <tran_rule></tran_rule>
+        </fail_codes>
+        <schedule>
+            <n_retrys>
+                <length>200</length>
+                <char_rule>numeric</char_rule>
+                <tran_rule></tran_rule>
+            </n_retrys>
+            <auto_hold>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </auto_hold>
+            <avg_runtime>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </avg_runtime>
+            <priority>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </priority>
+            <job_load>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </job_load>
+            <date_conditions>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </date_conditions>
+            <timezone>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </timezone>
+            <run_window>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </run_window>
+
+            <run_calendar>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </run_calendar>
+            <days_of_week>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </days_of_week>
+            <exclude_calendar>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </exclude_calendar>
+            <start_times>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </start_times>
+            <start_mins>
+                <length></length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </start_mins>
+            <must_start_times>
+                <length>255</length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </must_start_times>
+            <must_complete_times>
+                <length>255</length>
+                <char_rule></char_rule>
+                <tran_rule></tran_rule>
+            </must_complete_times>
+        </schedule>
+        <permission desc="권한 확인">
+            <gx desc="Group Execute">
+                <length>1</length>
+                <char_rule>YN</char_rule>
+                <tran_rule>Y(Yes) / N(No)</tran_rule>
+            </gx>
+            <ge desc="Group Edit">
+                <length>1</length>
+                <char_rule>YN</char_rule>
+                <tran_rule>Y(Yes) / N(No)</tran_rule>
+            </ge>
+            <wx desc="World Execute">
+                <length>1</length>
+                <char_rule>YN</char_rule>
+                <tran_rule>Y(Yes) / N(No)</tran_rule>
+            </wx>
+            <we desc="World Edit">
+                <length>1</length>
+                <char_rule>YN</char_rule>
+                <tran_rule>Y(Yes) / N(No)</tran_rule>
+            </we>
+            <mx desc="Machine Execute">
+                <length>1</length>
+                <char_rule>YN</char_rule>
+                <tran_rule>Y(Yes) / N(No)</tran_rule>
+            </mx>
+            <me desc="Machine Edit">
+                <length>1</length>
+                <char_rule>YN</char_rule>
+                <tran_rule>Y(Yes) / N(No)</tran_rule>
+            </me>
+        </permission>
+    </job>
+</data>

@@ -1,0 +1,1609 @@
+
+
+/* ----------------- WF_01.START ----------------- */
+
+insert_job: WF_01.START   job_type: CMD
+command: /app/Demo/batch_var.sh START
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+description: "APP_WF Start"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.END ----------------- */
+
+insert_job: WF_01.END   job_type: CMD
+command: /app/Demo/batch_var.sh END
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.JOB_20) & s(WF_01.JOB_19)
+description: "APP_WF End"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.JOB_01 ----------------- */
+
+insert_job: WF_01.JOB_01   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.START)
+description: "APP_WF JOB_01"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.JOB_02 ----------------- */
+
+insert_job: WF_01.JOB_02   job_type: CMD
+command: /app/Demo/batch_sleep.sh 20
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.JOB_01)
+description: "APP_WF JOB_02"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.JOB_03 ----------------- */
+
+insert_job: WF_01.JOB_03   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.JOB_01)
+description: "APP_WF JOB_03"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.JOB_04 ----------------- */
+
+insert_job: WF_01.JOB_04   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.JOB_01)
+description: "APP_WF JOB_04"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.JOB_05 ----------------- */
+
+insert_job: WF_01.JOB_05   job_type: CMD
+command: /app/Demo/batch_sleep.sh60
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.JOB_04) & s(WF_01.JOB_03)
+description: "APP_WF JOB_05"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.JOB_06 ----------------- */
+
+insert_job: WF_01.JOB_06   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.JOB_02)
+description: "APP_WF JOB_06"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.JOB_11 ----------------- */
+
+insert_job: WF_01.JOB_11   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.JOB_04)
+description: "APP_WF JOB_11"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.JOB_12 ----------------- */
+
+insert_job: WF_01.JOB_12   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.JOB_05) | s(WF_01.BOX_01)
+description: "APP_WF JOB_12"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.JOB_13 ----------------- */
+
+insert_job: WF_01.JOB_13   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.JOB_11)
+description: "APP_WF JOB_13"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.JOB_14 ----------------- */
+
+insert_job: WF_01.JOB_14   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.JOB_11)
+description: "APP_WF JOB_14"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.JOB_15 ----------------- */
+
+insert_job: WF_01.JOB_15   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.JOB_12)
+description: "APP_WF JOB_15"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.JOB_16 ----------------- */
+
+insert_job: WF_01.JOB_16   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.START)
+description: "APP_WF JOB_16"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.JOB_17 ----------------- */
+
+insert_job: WF_01.JOB_17   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.JOB_16)
+description: "APP_WF JOB_17"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.JOB_18 ----------------- */
+
+insert_job: WF_01.JOB_18   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.JOB_17)
+description: "APP_WF JOB_18"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.JOB_19 ----------------- */
+
+insert_job: WF_01.JOB_19   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.JOB_18)
+description: "APP_WF JOB_19"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.JOB_20 ----------------- */
+
+insert_job: WF_01.JOB_20   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.JOB_11) | s(WF_01.JOB_13) | s(WF_01.JOB_14) | s(WF_01.JOB_15) | s(WF_01.JOB_12)
+description: "APP_WF JOB_20"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- APP_RE.001.Repeat_001 ----------------- */
+
+insert_job: APP_RE.001.Repeat_001   job_type: CMD
+command: /app/Demo/batch_sleep.sh 60
+machine: db
+owner: root@db
+permission: 
+date_conditions: 1
+days_of_week: mo,tu,we,th,fr
+start_mins: 0,10,20,30,40,50
+description: "APP_RE.001.Repeat_001"
+std_out_file: "/app/Demo/APP_RE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_RE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_RE
+
+
+/* ----------------- APP_RE.002.Repeat_002 ----------------- */
+
+insert_job: APP_RE.002.Repeat_002   job_type: CMD
+command: /app/Demo/batch_sleep.sh 120
+machine: db
+owner: root@db
+permission: 
+date_conditions: 1
+days_of_week: mo,tu,we,th,fr
+start_mins: 2,12,22,32,42,52
+description: "APP_RE.002.Repeat_002"
+std_out_file: "/app/Demo/APP_RE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_RE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_RE
+
+
+/* ----------------- APP_RE.001.Repeat_003 ----------------- */
+
+insert_job: APP_RE.001.Repeat_003   job_type: CMD
+command: /app/Demo/batch_sleep.sh 10
+machine: db
+owner: root@db
+permission: 
+date_conditions: 1
+days_of_week: mo,tu,we,th,fr
+start_mins: 0,10,20,30,40,50
+description: "APP_RE.001.Repeat_001"
+std_out_file: "/app/Demo/APP_RE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_RE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_RE
+
+
+/* ----------------- WF_DB_01.START ----------------- */
+
+insert_job: WF_DB_01.START   job_type: CMD
+command: /app/Demo/batch_var.sh START
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+description: "APP_WF_DB Start"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.END ----------------- */
+
+insert_job: WF_DB_01.END   job_type: CMD
+command: /app/Demo/batch_var.sh END
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.JOB_20) & s(WF_DB_01.JOB_19)
+description: "APP_WF_DB End"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.JOB_01 ----------------- */
+
+insert_job: WF_DB_01.JOB_01   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.START)
+description: "APP_WF_DB JOB_01"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.JOB_02 ----------------- */
+
+insert_job: WF_DB_01.JOB_02   job_type: CMD
+command: /app/Demo/batch_sleep.sh 20
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.JOB_01)
+description: "APP_WF_DB JOB_02"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.JOB_03 ----------------- */
+
+insert_job: WF_DB_01.JOB_03   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.JOB_01)
+description: "APP_WF_DB JOB_03"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.JOB_04 ----------------- */
+
+insert_job: WF_DB_01.JOB_04   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.JOB_01)
+description: "APP_WF_DB JOB_04"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.JOB_05 ----------------- */
+
+insert_job: WF_DB_01.JOB_05   job_type: CMD
+command: /app/Demo/batch_sleep.sh60
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.JOB_04) & s(WF_DB_01.JOB_03)
+description: "APP_WF_DB JOB_05"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.JOB_06 ----------------- */
+
+insert_job: WF_DB_01.JOB_06   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.JOB_02)
+description: "APP_WF_DB JOB_06"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.JOB_07 ----------------- */
+
+insert_job: WF_DB_01.JOB_07   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.START)
+description: "APP_WF_DB JOB_07"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.JOB_08 ----------------- */
+
+insert_job: WF_DB_01.JOB_08   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.JOB_06) | s(WF_DB_01.JOB_07)
+description: "APP_WF_DB JOB_08"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.JOB_09 ----------------- */
+
+insert_job: WF_DB_01.JOB_09   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.JOB_07)
+description: "APP_WF_DB JOB_09"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.JOB_10 ----------------- */
+
+insert_job: WF_DB_01.JOB_10   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.JOB_07)
+description: "APP_WF_DB JOB_10"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.JOB_11 ----------------- */
+
+insert_job: WF_DB_01.JOB_11   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.JOB_04)
+description: "APP_WF_DB JOB_11"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.JOB_12 ----------------- */
+
+insert_job: WF_DB_01.JOB_12   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.JOB_10) & s(WF_DB_01.JOB_05) & s(WF_DB_01.JOB_08)
+description: "APP_WF_DB JOB_12"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.JOB_13 ----------------- */
+
+insert_job: WF_DB_01.JOB_13   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.JOB_11)
+description: "APP_WF_DB JOB_13"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.JOB_14 ----------------- */
+
+insert_job: WF_DB_01.JOB_14   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.JOB_11)
+description: "APP_WF_DB JOB_14"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.JOB_15 ----------------- */
+
+insert_job: WF_DB_01.JOB_15   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.JOB_12)
+description: "APP_WF_DB JOB_15"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.JOB_16 ----------------- */
+
+insert_job: WF_DB_01.JOB_16   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.START)
+description: "APP_WF_DB JOB_16"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.JOB_17 ----------------- */
+
+insert_job: WF_DB_01.JOB_17   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.JOB_16)
+description: "APP_WF_DB JOB_17"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.JOB_18 ----------------- */
+
+insert_job: WF_DB_01.JOB_18   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.JOB_17)
+description: "APP_WF_DB JOB_18"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.JOB_19 ----------------- */
+
+insert_job: WF_DB_01.JOB_19   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.JOB_18)
+description: "APP_WF_DB JOB_19"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- WF_DB_01.JOB_20 ----------------- */
+
+insert_job: WF_DB_01.JOB_20   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_DB_01.JOB_11) | s(WF_DB_01.JOB_13) | s(WF_DB_01.JOB_14) | s(WF_DB_01.JOB_15) | s(WF_DB_01.JOB_12)
+description: "APP_WF_DB JOB_20"
+std_out_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_DB/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_DB
+
+
+/* ----------------- APP_CONDITIONS.JOB_01 ----------------- */
+
+insert_job: APP_CONDITIONS.JOB_01   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+description: "APP_CONDITIONS - JOB_01"
+std_out_file: "/app/Demo/APP_CONDITIONS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_CONDITIONS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_CONDITIONS
+
+
+/* ----------------- APP_CONDITIONS.JOB_02 ----------------- */
+
+insert_job: APP_CONDITIONS.JOB_02   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(APP_CONDITIONS.JOB_01)
+description: "APP_CONDITIONS - JOB_02"
+std_out_file: "/app/Demo/APP_CONDITIONS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_CONDITIONS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_CONDITIONS
+
+
+/* ----------------- APP_OBJECTS.Command_01 ----------------- */
+
+insert_job: APP_OBJECTS.Command_01   job_type: CMD
+command: /app/Demo/batch_sleep.sh 10
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+description: "APP_OBJECTS - Command_01"
+std_out_file: "/app/Demo/APP_OBJECTS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_OBJECTS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_OBJECTS
+
+
+/* ----------------- APP_OBJECTS.Command_02 ----------------- */
+
+insert_job: APP_OBJECTS.Command_02   job_type: CMD
+command: /app/Demo/batch_sleep.sh 20
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(APP_OBJECTS.Command_01)
+description: "APP_OBJECTS - Command_02"
+std_out_file: "/app/Demo/APP_OBJECTS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_OBJECTS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_OBJECTS
+
+
+/* ----------------- APP_OBJECTS.BOX_OBJ ----------------- */
+
+insert_job: APP_OBJECTS.BOX_OBJ   job_type: BOX
+owner: root@db
+permission: 
+date_conditions: 0
+description: "APP_OBJECTS.BOX_OBJ"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_OBJECTS
+
+
+/* ----------------- APP_OBJECTS.BOX_OBJ.Command_01 ----------------- */
+
+insert_job: APP_OBJECTS.BOX_OBJ.Command_01   job_type: CMD
+command: /app/Demo/batch_sleep.sh 8
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+description: "APP_OBJECTS - BOX_OBJ - Command_01"
+std_out_file: "/app/Demo/APP_OBJECTS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_OBJECTS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_OBJECTS
+
+
+/* ----------------- APP_OBJECTS.BOX_OBJ.Command_02 ----------------- */
+
+insert_job: APP_OBJECTS.BOX_OBJ.Command_02   job_type: CMD
+command: /app/Demo/batch_sleep.sh 9
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(APP_OBJECTS.BOX_OBJ.Command_01)
+description: "APP_OBJECTS - BOX_OBJ - Command_02"
+std_out_file: "/app/Demo/APP_OBJECTS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_OBJECTS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_OBJECTS
+
+
+/* ----------------- WF_01.BOX_01 ----------------- */
+
+insert_job: WF_01.BOX_01   job_type: BOX
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.START)
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.JOB_07 ----------------- */
+
+insert_job: WF_01.JOB_07   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+description: "APP_WF JOB_07"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.JOB_08 ----------------- */
+
+insert_job: WF_01.JOB_08   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.JOB_10)
+description: "APP_WF JOB_08"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.JOB_09 ----------------- */
+
+insert_job: WF_01.JOB_09   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.JOB_07)
+description: "APP_WF JOB_09"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- WF_01.JOB_10 ----------------- */
+
+insert_job: WF_01.JOB_10   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(WF_01.JOB_07)
+description: "APP_WF JOB_10"
+std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF
+
+
+/* ----------------- Box.FileTrigger ----------------- */
+
+insert_job: Box.FileTrigger   job_type: BOX
+owner: root@db
+permission: 
+date_conditions: 0
+description: "Application - Objects : Box - File Trigger"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_OBJECTS
+
+
+/* ----------------- FileTrigger.Start ----------------- */
+
+insert_job: FileTrigger.Start   job_type: CMD
+command: /usr/bin/sleep 5
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+description: "Job Template - App Objects"
+std_out_file: "/app/Demo/APP_OBJECTS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_OBJECTS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_OBJECTS
+
+
+/* ----------------- FileTrigger.Monitoring.All_Job.jil ----------------- */
+
+insert_job: FileTrigger.Monitoring.All_Job.jil   job_type: FT
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(FileTrigger.Start)
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_OBJECTS
+
+
+/* ----------------- FileTrigger.Generate.All_Job.jil ----------------- */
+
+insert_job: FileTrigger.Generate.All_Job.jil   job_type: CMD
+command: autorep -J ALL -q > /app/Demo/All_Job.jil
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: f(FileTrigger.Monitoring.All_Job.jil)
+description: "Job Template - App Objects"
+std_out_file: "/app/Demo/APP_OBJECTS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_OBJECTS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_OBJECTS
+
+
+/* ----------------- FileTrigger.Monitoring.All_Job.jil.02 ----------------- */
+
+insert_job: FileTrigger.Monitoring.All_Job.jil.02   job_type: FT
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(FileTrigger.Generate.All_Job.jil)
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_OBJECTS
+
+
+/* ----------------- FileTrigger.Delete.All_Job.jil ----------------- */
+
+insert_job: FileTrigger.Delete.All_Job.jil   job_type: CMD
+command: rm -rf /app/Demo/All_Job.jil
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+condition: s(FileTrigger.Monitoring.All_Job.jil)
+description: "Job Template - App Objects"
+std_out_file: "/app/Demo/APP_OBJECTS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_OBJECTS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_OBJECTS
+
+
+/* ----------------- WF_ORACLE.START ----------------- */
+
+insert_job: WF_ORACLE.START   job_type: CMD
+command: /app/Demo/batch_var.sh START
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+description: "APP_WF_ORACLE Start"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.END ----------------- */
+
+insert_job: WF_ORACLE.END   job_type: CMD
+command: /app/Demo/batch_var.sh END
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.JOB_20) & s(WF_ORACLE.JOB_19)
+description: "APP_WF_ORACLE End"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.JOB_01 ----------------- */
+
+insert_job: WF_ORACLE.JOB_01   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.START)
+description: "APP_WF_ORACLE JOB_01"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.JOB_02 ----------------- */
+
+insert_job: WF_ORACLE.JOB_02   job_type: CMD
+command: /app/Demo/batch_sleep.sh 20
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.JOB_01)
+description: "APP_WF_ORACLE JOB_02"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.JOB_03 ----------------- */
+
+insert_job: WF_ORACLE.JOB_03   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.JOB_01)
+description: "APP_WF_ORACLE JOB_03"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.JOB_04 ----------------- */
+
+insert_job: WF_ORACLE.JOB_04   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.JOB_01)
+description: "APP_WF_ORACLE JOB_04"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.JOB_05 ----------------- */
+
+insert_job: WF_ORACLE.JOB_05   job_type: CMD
+command: /app/Demo/batch_sleep.sh60
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.JOB_04) & s(WF_ORACLE.JOB_03)
+description: "APP_WF_ORACLE JOB_05"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.JOB_06 ----------------- */
+
+insert_job: WF_ORACLE.JOB_06   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.JOB_02)
+description: "APP_WF_ORACLE JOB_06"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.JOB_11 ----------------- */
+
+insert_job: WF_ORACLE.JOB_11   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.JOB_04)
+description: "APP_WF_ORACLE JOB_11"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.JOB_12 ----------------- */
+
+insert_job: WF_ORACLE.JOB_12   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.JOB_05) | s(WF_ORACLE.BOX_01)
+description: "APP_WF_ORACLE JOB_12"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.JOB_13 ----------------- */
+
+insert_job: WF_ORACLE.JOB_13   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.JOB_11)
+description: "APP_WF_ORACLE JOB_13"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.JOB_14 ----------------- */
+
+insert_job: WF_ORACLE.JOB_14   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.JOB_11)
+description: "APP_WF_ORACLE JOB_14"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.JOB_15 ----------------- */
+
+insert_job: WF_ORACLE.JOB_15   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.JOB_12)
+description: "APP_WF_ORACLE JOB_15"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.JOB_16 ----------------- */
+
+insert_job: WF_ORACLE.JOB_16   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.START)
+description: "APP_WF_ORACLE JOB_16"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.JOB_17 ----------------- */
+
+insert_job: WF_ORACLE.JOB_17   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.JOB_16)
+description: "APP_WF_ORACLE JOB_17"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.JOB_18 ----------------- */
+
+insert_job: WF_ORACLE.JOB_18   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.JOB_17)
+description: "APP_WF_ORACLE JOB_18"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.JOB_19 ----------------- */
+
+insert_job: WF_ORACLE.JOB_19   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.JOB_18)
+description: "APP_WF_ORACLE JOB_19"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.JOB_20 ----------------- */
+
+insert_job: WF_ORACLE.JOB_20   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.JOB_11) | s(WF_ORACLE.JOB_13) | s(WF_ORACLE.JOB_14) | s(WF_ORACLE.JOB_15) | s(WF_ORACLE.JOB_12)
+description: "APP_WF_ORACLE JOB_20"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.BOX_01 ----------------- */
+
+insert_job: WF_ORACLE.BOX_01   job_type: BOX
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.START)
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.JOB_07 ----------------- */
+
+insert_job: WF_ORACLE.JOB_07   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+description: "APP_WF_ORACLE JOB_07"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.JOB_08 ----------------- */
+
+insert_job: WF_ORACLE.JOB_08   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.JOB_10)
+description: "APP_WF_ORACLE JOB_08"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.JOB_09 ----------------- */
+
+insert_job: WF_ORACLE.JOB_09   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.JOB_07)
+description: "APP_WF_ORACLE JOB_09"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- WF_ORACLE.JOB_10 ----------------- */
+
+insert_job: WF_ORACLE.JOB_10   job_type: CMD
+command: /app/Demo/batch_sleep.sh 30
+machine: oracle
+owner: root@oracle
+permission: 
+date_conditions: 0
+condition: s(WF_ORACLE.JOB_07)
+description: "APP_WF_ORACLE JOB_10"
+std_out_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_WF_ORACLE/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_WF_ORACLE
+
+
+/* ----------------- APP_RE2.001.Repeat_001 ----------------- */
+
+insert_job: APP_RE2.001.Repeat_001   job_type: CMD
+command: /app/Demo/batch_sleep.sh 60
+machine: db
+owner: root@db
+permission: 
+date_conditions: 1
+days_of_week: mo,tu,we,th,fr
+start_mins: 0,10,20,30,40,50
+description: "APP_RE2.001.Repeat_001"
+std_out_file: "/app/Demo/APP_RE2/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_RE2/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_RE2
+
+
+/* ----------------- APP_RE2.002.Repeat_002 ----------------- */
+
+insert_job: APP_RE2.002.Repeat_002   job_type: CMD
+command: /app/Demo/batch_sleep.sh 120
+machine: db
+owner: root@db
+permission: 
+date_conditions: 1
+days_of_week: mo,tu,we,th,fr
+start_mins: 2,12,22,32,42,52
+description: "APP_RE2.002.Repeat_002"
+std_out_file: "/app/Demo/APP_RE2/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_RE2/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_RE2
+
+
+/* ----------------- APP_RE2.001.Repeat_003 ----------------- */
+
+insert_job: APP_RE2.001.Repeat_003   job_type: CMD
+command: /app/Demo/batch_sleep.sh 10
+machine: db
+owner: root@db
+permission: 
+date_conditions: 1
+days_of_week: mo,tu,we,th,fr
+start_mins: 0,10,20,30,40,50
+description: "APP_RE2.001.Repeat_001"
+std_out_file: "/app/Demo/APP_RE2/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_RE2/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_RE2
+
+
+/* ----------------- APP_RE3.001.Repeat_001 ----------------- */
+
+insert_job: APP_RE3.001.Repeat_001   job_type: CMD
+command: /app/Demo/batch_sleep.sh 60
+machine: db
+owner: root@db
+permission: 
+date_conditions: 1
+run_calendar: Day1st
+start_mins: 0,10,20,30,40,50
+description: "APP_RE3.001.Repeat_001"
+std_out_file: "/app/Demo/APP_RE3/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_RE3/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_RE3
+
+
+/* ----------------- APP_RE3.002.Repeat_002 ----------------- */
+
+insert_job: APP_RE3.002.Repeat_002   job_type: CMD
+command: /app/Demo/batch_sleep.sh 120
+machine: db
+owner: root@db
+permission: 
+date_conditions: 1
+run_calendar: workday
+exclude_calendar: holiday
+start_mins: 2,12,22,32,42,52
+description: "APP_RE3.002.Repeat_002"
+std_out_file: "/app/Demo/APP_RE3/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_RE3/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_RE3
+
+
+/* ----------------- APP_RE3.001.Repeat_003 ----------------- */
+
+insert_job: APP_RE3.001.Repeat_003   job_type: CMD
+command: /app/Demo/batch_sleep.sh 10
+machine: db
+owner: root@db
+permission: 
+date_conditions: 1
+days_of_week: mo,tu,we,th,fr
+start_mins: 0,10,20,30,40,50
+description: "APP_RE3.001.Repeat_001"
+std_out_file: "/app/Demo/APP_RE3/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_RE3/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_RE3
+
+
+/* ----------------- APP_OBJECTS.Command_03 ----------------- */
+
+insert_job: APP_OBJECTS.Command_03   job_type: CMD
+command: /app/Demo/batch_sleep.sh 300
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+description: "APP_OBJECTS - Command_03##$$$$"
+std_out_file: "/app/Demo/APP_OBJECTS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_OBJECTS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_OBJECTS
+
+
+/* ----------------- APP_NOTI.Command_01 ----------------- */
+
+insert_job: APP_NOTI.Command_01   job_type: CMD
+command: /app/Demo/batch_sleep.sh 10
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+description: "APP_NOTI.Command_01"
+std_out_file: "/app/Demo/APP_NOTI/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_NOTI/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_NOTI
+
+
+/* ----------------- email_job_1 ----------------- */
+
+insert_job: email_job_1   job_type: CMD
+command: as_test -t 2
+machine: localhost
+owner: root@db
+permission: 
+date_conditions: 0
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_NOTI
+send_notification: 1
+notification_msg: "email_job_1 has completed"
+notification_emailaddress: h2noda@unipark.kr
+
+
+/* ----------------- APP_NOTI.Command_02 ----------------- */
+
+insert_job: APP_NOTI.Command_02   job_type: CMD
+command: /app/Demo/batch_sleep.sh 10
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+description: "APP_NOTI.Command_02"
+std_out_file: "/app/Demo/APP_NOTI/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_NOTI/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_NOTI
+send_notification: 1
+notification_msg: "Send notification on selected alarms and any job status"
+notification_emailaddress: h2noda@unipark.kr
+
+
+/* ----------------- APP_NOTI.Command_03 ----------------- */
+
+insert_job: APP_NOTI.Command_03   job_type: CMD
+command: /app/Demo/batch_sleep.sh 10
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+description: "APP_NOTI.Command_03"
+std_out_file: "/app/Demo/APP_NOTI/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_NOTI/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_NOTI
+send_notification: F
+notification_msg: "Send notification on selected alarms and job failure"
+notification_emailaddress: h2noda@unipark.kr
+
+
+/* ----------------- APP_NOTI.Command_04 ----------------- */
+
+insert_job: APP_NOTI.Command_04   job_type: CMD
+command: /app/Demo/batch_sleep.sh 10
+machine: db
+owner: root@db
+permission: 
+date_conditions: 0
+description: "APP_NOTI.Command_04"
+std_out_file: "/app/Demo/APP_NOTI/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_NOTI/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+group: GRP_NOTI
+application: APP_NOTI
+send_notification: F
+notification_msg: "Send notification on selected alarms and job failure"
+notification_emailaddress: h2noda@unipark.kr

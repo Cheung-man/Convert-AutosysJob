@@ -1,0 +1,33 @@
+{
+  "field": [
+    { "field": "insert_job", "used": "Y", "double_quotation": "N" },
+    { "field": "job_type", "used": "Y", "double_quotation": "N" },
+    { "field": "command", "used": "Y", "double_quotation": "N" },
+    { "field": "machine", "used": "Y", "double_quotation": "N" },
+    { "field": "owner", "used": "Y", "double_quotation": "N" },
+    { "field": "status", "used": "Y", "double_quotation": "N" },
+    { "field": "permission", "used": "Y", "double_quotation": "N" },
+    { "field": "date_conditions", "used": "Y", "double_quotation": "N" },
+    { "field": "condition", "used": "Y", "double_quotation": "N" },
+    { "field": "run_calendar", "used": "Y", "double_quotation": "N" },
+    { "field": "exclude_calendar", "used": "Y", "double_quotation": "N" },
+    { "field": "days_of_week", "used": "Y", "double_quotation": "N" },
+    { "field": "start_times", "used": "Y", "double_quotation": "Y" },
+    { "field": "start_mins", "used": "Y", "double_quotation": "N" },
+    { "field": "description", "used": "Y", "double_quotation": "Y" },
+    { "field": "std_out_file", "used": "Y", "double_quotation": "Y" },
+    { "field": "std_err_file", "used": "Y", "double_quotation": "Y" },
+    { "field": "alarm_if_fail", "used": "Y", "double_quotation": "N" },
+    { "field": "alarm_if_terminated", "used": "Y", "double_quotation": "N" },
+    { "field": "group", "used": "Y", "double_quotation": "N" },
+    { "field": "application", "used": "Y", "double_quotation": "N" },
+    { "field": "send_notification", "used": "Y", "double_quotation": "N" },
+    { "field": "notification_msg", "used": "Y", "double_quotation": "Y" },
+    {
+      "field": "notification_emailaddress",
+      "used": "Y",
+      "double_quotation": "N"
+    },
+    { "field": "perper", "used": "N", "double_quotation": "N" }
+  ]
+}
