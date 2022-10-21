@@ -23,6 +23,7 @@
     { "field": "application", "used": "Y", "double_quotation": "N" },
     { "field": "send_notification", "used": "Y", "double_quotation": "N" },
     { "field": "notification_msg", "used": "Y", "double_quotation": "Y" },
+    { "field": "fail_codes", "used": "Y", "double_quotation": "N" },
     {
       "field": "notification_emailaddress",
       "used": "Y",

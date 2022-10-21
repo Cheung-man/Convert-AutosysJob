@@ -5,7 +5,7 @@
 # Project: AUTOJOB
 # Created Date: 2022-09-27, 04:16:10
 # Author: Chungman Kim(h2noda@unipark.kr)
-# Last Modified: Thu Oct 20 2022
+# Last Modified: Fri Oct 21 2022
 # Modified By: Chungman Kim
 # Copyright (c) 2022 Unipark
 # HISTORY:
@@ -72,8 +72,7 @@ def initialize(args):
         if os.path.isfile(arg_jilfile) == False:
             raise FileNotFoundError
         else:
-            msg.printmsg("Jil File : " + arg_jilfile,
-                         "-", 1, "white", False)
+            msg.printmsg("Jil File : " + arg_jilfile, "->", 1, "white", False)
             xlsx = Xlsx(arg_excelfile, "JOB", mode="n")
             wb = xlsx.wb
             ws = xlsx.ws

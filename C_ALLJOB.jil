@@ -1607,3 +1607,21 @@ application: APP_NOTI
 send_notification: F
 notification_msg: "Send notification on selected alarms and job failure"
 notification_emailaddress: h2noda@unipark.kr
+
+
+/* ----------------- APP_OBJECTS.Command_04 ----------------- */
+
+insert_job: APP_OBJECTS.Command_04   job_type: CMD
+command: /app/Demo/batch_sleep.sh 10
+machine: db
+owner: root@db
+permission: 
+date_conditions: 1
+days_of_week: su,mo,tu
+start_times: "10:00, 12:00, 14:00"
+description: "APP_OBJECTS - Command_01"
+std_out_file: "/app/Demo/APP_OBJECTS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.out"
+std_err_file: "/app/Demo/APP_OBJECTS/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
+alarm_if_fail: 1
+alarm_if_terminated: 1
+application: APP_OBJECTS
