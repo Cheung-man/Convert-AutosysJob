@@ -47,6 +47,7 @@ std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.o
 std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
 alarm_if_fail: 1
 alarm_if_terminated: 1
+group: G1
 application: APP_WF
 
 
@@ -64,6 +65,7 @@ std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.o
 std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
 alarm_if_fail: 1
 alarm_if_terminated: 1
+group: G1
 application: APP_WF
 
 
@@ -81,6 +83,7 @@ std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.o
 std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
 alarm_if_fail: 1
 alarm_if_terminated: 1
+group: G1
 application: APP_WF
 
 
@@ -98,6 +101,7 @@ std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.o
 std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
 alarm_if_fail: 1
 alarm_if_terminated: 1
+group: G1
 application: APP_WF
 
 
@@ -115,6 +119,7 @@ std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.o
 std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
 alarm_if_fail: 1
 alarm_if_terminated: 1
+group: G1
 application: APP_WF
 
 
@@ -132,6 +137,7 @@ std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.o
 std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
 alarm_if_fail: 1
 alarm_if_terminated: 1
+group: G1
 application: APP_WF
 
 
@@ -149,6 +155,7 @@ std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.o
 std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
 alarm_if_fail: 1
 alarm_if_terminated: 1
+group: G1
 application: APP_WF
 
 
@@ -166,6 +173,7 @@ std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.o
 std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
 alarm_if_fail: 1
 alarm_if_terminated: 1
+group: G1
 application: APP_WF
 
 
@@ -183,6 +191,7 @@ std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.o
 std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
 alarm_if_fail: 1
 alarm_if_terminated: 1
+group: G1
 application: APP_WF
 
 
@@ -200,6 +209,7 @@ std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.o
 std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
 alarm_if_fail: 1
 alarm_if_terminated: 1
+group: G1
 application: APP_WF
 
 
@@ -217,6 +227,7 @@ std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.o
 std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
 alarm_if_fail: 1
 alarm_if_terminated: 1
+group: G1
 application: APP_WF
 
 
@@ -234,6 +245,7 @@ std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.o
 std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
 alarm_if_fail: 1
 alarm_if_terminated: 1
+group: G1
 application: APP_WF
 
 
@@ -251,6 +263,7 @@ std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.o
 std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
 alarm_if_fail: 1
 alarm_if_terminated: 1
+group: G1
 application: APP_WF
 
 
@@ -268,6 +281,7 @@ std_out_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.o
 std_err_file: "/app/Demo/APP_WF/PRD/$AUTO_JOB_NAME.$AUTORUN.`date +%Y%m%d%H%M`.err"
 alarm_if_fail: 1
 alarm_if_terminated: 1
+group: G1
 application: APP_WF
 
 

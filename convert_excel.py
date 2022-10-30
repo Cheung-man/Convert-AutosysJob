@@ -5,7 +5,7 @@
 # Project: AUTOJOB
 # Created Date: 2022-09-27, 04:16:10
 # Author: Chungman Kim(h2noda@unipark.kr)
-# Last Modified: Thu Oct 20 2022
+# Last Modified: Sun Oct 23 2022
 # Modified By: Chungman Kim
 # Copyright (c) 2022 Unipark
 # HISTORY:
@@ -138,7 +138,7 @@ def convert_e2j():
                         celldata = "\"" + cell.value + "\""
                     else:
                         celldata = cell.value
-                    if (header == "insert_job" or header == "updatE_job"):
+                    if (header == "insert_job" or header == "update_job"):
                         jilfile.write(header + ": " + celldata + "   ")
                     else:
                         if header == "notification_emailaddress":
